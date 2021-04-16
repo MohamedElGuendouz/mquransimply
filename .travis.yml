@@ -1,14 +1,16 @@
 language: node_js
 node_js:
- — “8.9.4”
+ - "8.9.4"
 branches:
  only:
- — main
+ - main
 before_script:
- — npm install -g ionic
- — npm ci 
+ - npm install -g ionic
+ - npm ci 
+ - yarn install
 script:
- — ionic build --prod -- --base-href ./
+ - cordova platform add ios --nofetch
+ - ionic cordova build ios --prod --release
 deploy:
  provider: pages
  skip-cleanup: true
