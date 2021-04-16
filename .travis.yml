@@ -8,11 +8,10 @@ before_script:
  — npm install -g ionic
  — npm ci 
 script:
- — ionic build --prod -- --base-href ./
+ — ionic build
 deploy:
  skip-cleanup: true
  github-token: $GITHUB_TOKEN 
  keep-history: true
  on:
    branch: main
- local_dir: www
