@@ -1,20 +1,7 @@
+sudo: false
 language: node_js
 node_js:
- - "8.9.4"
-branches:
- only:
- - main
-before_script:
- - npm install -g ionic
- - yarn install
-script:
- - cordova platform add ios --nofetch
- - ionic cordova build ios --prod --release
-deploy:
- provider: pages
- skip-cleanup: true
- github-token: $GITHUB_TOKEN 
- keep-history: true
- on:
-   branch: main
- local_dir: www
+  - 'node'
+  - '6'
+  - '5'
+  - '4'
