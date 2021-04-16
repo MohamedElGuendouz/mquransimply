@@ -1,18 +1,15 @@
 language: node_js
 node_js:
- — "11.0"
+  - "11.0"
 branches:
- only:
- — main
+  only:
+    - main
 before_script:
- — npm install -g ionic
- — npm ci 
+  - npm install -g @angular/cli
 script:
- — ionic build --prod -- --base-href ./
+  - npm install
+  - npm run build
 deploy:
- skip-cleanup: true
- github-token: $GITHUB_TOKEN 
- keep-history: true
- on:
-   branch: main
- local_dir: www
+  skip_cleanup: true
+  token:
+    secure: ""
