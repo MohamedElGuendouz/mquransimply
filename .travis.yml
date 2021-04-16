@@ -6,7 +6,6 @@ branches:
  - main
 before_script:
  - npm install -g ionic
- - npm ci 
  - yarn install
 script:
  - cordova platform add ios --nofetch
